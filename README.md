@@ -7,4 +7,4 @@ Connection to Spring Boot backend is working properly.
 
 ## Todo
 - Lure, Fish, and Lake forms.
-- Tables for stats
+- Tables for ~~Lures~~, Lakes and Fishes.
