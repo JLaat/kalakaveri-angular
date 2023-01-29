@@ -22,8 +22,8 @@ describe('FishService', () => {
 
   it('getAllFishes() should return an Observable<Fish[]>', () => {
     const fishes: Fish[] = [
-      { id: 2, name: 'Ahven', weight: 0.4 },
-      { id: 3, name: 'Kuha', weight: 2 },
+      { id: 2, name: 'Ahven' },
+      { id: 3, name: 'Kuha' },
     ];
 
     testService.getAllFishes().subscribe((res) => {
