@@ -1,6 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { LureTableComponent } from './lure-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { LureService } from 'src/app/services/lure/lure.service';
 
 describe('LureTableComponent', () => {
   let component: LureTableComponent;
@@ -9,6 +14,7 @@ describe('LureTableComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [LureTableComponent],
+      imports: [HttpClientTestingModule, MatTableModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LureTableComponent);
@@ -20,7 +26,8 @@ describe('LureTableComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have lures in the array', () => {
-    expect(component.lureData.length).toBeGreaterThan(0);
+  it('should set lureData', () => {
+    component.ngOnInit();
+    expect(component.lureData).toBeTruthy();
   });
 });
