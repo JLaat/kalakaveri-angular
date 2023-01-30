@@ -1,6 +1,6 @@
 # Kalakaveri
 
-This repository is frontend for my fishing application. 
+This repository is front-end for my fishing application. 
 
 ## State
 Connection to Spring Boot backend is working properly. 
