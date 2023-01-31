@@ -16,7 +16,7 @@ export class LureService {
   }
 
   public getLureById(id: number): Observable<Lure> {
-    return this.http.get<Lure>(`${this.apiUrl}/lure/${id}`);
+    return this.http.get<Lure>(`${this.apiUrl}/lure/find/${id}`);
   }
 
   public addLure(lure: Lure): Observable<Lure> {

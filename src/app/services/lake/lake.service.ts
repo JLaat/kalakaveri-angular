@@ -15,7 +15,7 @@ export class LakeService {
   }
 
   public getLakeById(id: number): Observable<Lake> {
-    return this.http.get<Lake>(`${environment.apiUrl}/lake/${id}`);
+    return this.http.get<Lake>(`${environment.apiUrl}/lake/find/${id}`);
   }
 
   public addLake(lake: Lake): Observable<Lake> {
