@@ -2,8 +2,8 @@ import { Observable } from 'rxjs';
 
 export interface Catch {
   id: number;
-  fish: string;
-  lake: string;
-  lure: string;
+  fishName: string;
+  lakeName: string;
+  lureName: string;
   weight: number;
 }

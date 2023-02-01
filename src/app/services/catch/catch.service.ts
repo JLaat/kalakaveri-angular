@@ -3,7 +3,6 @@ import { Observable, tap } from 'rxjs';
 import { Catch } from '../../models/catch.model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment.development';
-import { ParsedCatch } from 'src/app/models/parsed-catch.model';
 import { Fish } from 'src/app/models/fish.model';
 
 @Injectable({
