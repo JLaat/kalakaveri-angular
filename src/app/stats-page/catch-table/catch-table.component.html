@@ -1,1 +1,5 @@
-<p *ngFor="let item of catchData">{{item}}</p>
+<ng-container *ngFor="let catch of catchData">
+    <p>Fish: {{catch.fish.name}}</p>
+    <p>Lure: {{catch.lure.brand}} {{catch.lure.model}} ({{catch.lure.weight}}g)</p>
+  </ng-container>
+  

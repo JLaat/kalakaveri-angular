@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of, map } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Catch } from 'src/app/models/catch.model';
 import { CatchService } from 'src/app/services/catch/catch.service';
 import { FishService } from 'src/app/services/fish/fish.service';
@@ -15,7 +15,7 @@ import { Lure } from 'src/app/models/lure.model';
   styleUrls: ['./catch-table.component.scss'],
 })
 export class CatchTableComponent implements OnInit {
-  public catchData: any[] = [];
+  public catchData: Catch[] = [];
   displayedColumns: string[] = ['name', 'location'];
 
   constructor(
@@ -27,14 +27,12 @@ export class CatchTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCatches();
+    console.log(this.catchData);
   }
 
   public getCatches(): void {
-    this.catchService.getAllCatches().subscribe({
-      next: (response: Catch[]) => {
-        this.catchData = response;
-        console.log(this.catchData);
-      },
+    this.catchService.getCatches().subscribe((catches) => {
+      this.catchData = catches;
     });
   }
 }
