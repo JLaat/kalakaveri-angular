@@ -44,17 +44,6 @@ export class CatchService {
               });
             })
           );
-        }),
-        map((catchDataArray) => {
-          return catchDataArray.map((catchData) => {
-            return {
-              id: catchData.id,
-              fish: catchData.fish,
-              lake: catchData.lake,
-              lure: catchData.lure,
-              weight: catchData.weight,
-            };
-          });
         })
       );
   }
