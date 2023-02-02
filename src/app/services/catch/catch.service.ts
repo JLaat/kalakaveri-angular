@@ -24,11 +24,13 @@ export class CatchService {
           lureId: number;
           weight: number;
         }[]
-      >(`${this.apiUrl}/catch/all`)
+      >(`${this.apiUrl}/catch/all`) // Get all catches as an array of objects:  array[]:{id, fishId, lakeId, lureId, weight}
       .pipe(
         mergeMap((catchesData) => {
+          // For each catch, get the fish, lake, and lure data by using the id's from the catch object
           return forkJoin(
             catchesData.map((catchData) => {
+              // forkJoin() is used to wait for all the http requests to complete before returning the data
               return forkJoin({
                 id: of(catchData.id),
                 fish: this.http.get<Fish>(

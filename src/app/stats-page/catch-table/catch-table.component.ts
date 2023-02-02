@@ -5,9 +5,6 @@ import { CatchService } from 'src/app/services/catch/catch.service';
 import { FishService } from 'src/app/services/fish/fish.service';
 import { LakeService } from 'src/app/services/lake/lake.service';
 import { LureService } from 'src/app/services/lure/lure.service';
-import { Fish } from 'src/app/models/fish.model';
-import { Lake } from 'src/app/models/lake.model';
-import { Lure } from 'src/app/models/lure.model';
 
 @Component({
   selector: 'app-catch-table',
@@ -16,7 +13,12 @@ import { Lure } from 'src/app/models/lure.model';
 })
 export class CatchTableComponent implements OnInit {
   public catchData: Catch[] = [];
-  displayedColumns: string[] = ['name', 'location'];
+  displayedColumns: string[] = [
+    'fish-name',
+    'lake-name',
+    'lure-model',
+    'weight',
+  ];
 
   constructor(
     private catchService: CatchService,
