@@ -1,0 +1,32 @@
+<form>
+    <h2>
+        Add Catch
+    </h2>
+    <mat-form-field appearance="fill">
+        <mat-label>Select a fish*</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let fish of fishData" value="fish">{{fish.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Select a lure</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let lure of lureData" value="lure">{{lure.brand + " " + lure.model}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Select a lake</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let lake of lakeData" value="lake">{{lake.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+        <mat-slider min="0" max="10" step="0.1" discrete [displayWith]="formatLabel">
+          <input matSliderThumb>
+        </mat-slider>
+
+        <button mat-raised-button color="primary">Add</button>
+</form>
