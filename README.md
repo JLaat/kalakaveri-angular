@@ -10,7 +10,3 @@ Connection to Spring Boot backend is working properly. Creating forms right now.
 - Tables for ~~Lures~~, ~~Lakes~~ and ~~Fishes~~.
 
 
-## Adding new catches
-- You can add new catches through catch form. 
-<br />
-    ![Tux, the Linux mascot](./src/assets/images/catch-form.png)
