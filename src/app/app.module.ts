@@ -10,7 +10,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
-import { MatOption } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { LakeTableComponent } from '../app/stats-page/lake-table/lake-table.component';
 import { CatchTableComponent } from './stats-page/catch-table/catch-table.component';

@@ -19,6 +19,11 @@ export class CatchFormComponent implements OnInit {
   public lureData: Lure[] = [];
   public lakeData: Lake[] = [];
 
+  public selectedFish!: Fish;
+  public selectedLure!: Lure;
+  public selectedLake!: Lake;
+  public selectedWeight!: number;
+
   formatLabel(value: number): string {
     if (value >= 1000) {
       return Math.round(value / 1000) + 'k';
@@ -55,5 +60,28 @@ export class CatchFormComponent implements OnInit {
     this.lakeService.getAllLakes().subscribe((lakes) => {
       this.lakeData = lakes;
     });
+  }
+
+  public handleAddClick(): void {
+    if (this.ensureValuesAreDefined()) {
+      const newCatch: Catch = {
+        fish: this.selectedFish,
+        lure: this.selectedLure,
+        lake: this.selectedLake,
+        weight: this.selectedWeight,
+      };
+      console.log(newCatch);
+    } else {
+      console.log('Please select all values');
+    }
+  }
+
+  public ensureValuesAreDefined(): boolean {
+    return (
+      this.selectedFish !== undefined &&
+      this.selectedLure !== undefined &&
+      this.selectedLake !== undefined &&
+      this.selectedWeight !== undefined
+    );
   }
 }
