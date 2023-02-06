@@ -8,6 +8,7 @@ import { Lure } from 'src/app/models/lure.model';
 import { Lake } from 'src/app/models/lake.model';
 import { LakeService } from 'src/app/services/lake/lake.service';
 import { LureService } from 'src/app/services/lure/lure.service';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-catch-form',
@@ -35,7 +36,8 @@ export class CatchFormComponent implements OnInit {
   constructor(
     private fishService: FishService,
     private lakeService: LakeService,
-    private lureService: LureService
+    private lureService: LureService,
+    private catchService: CatchService
   ) {}
 
   ngOnInit(): void {
@@ -64,12 +66,15 @@ export class CatchFormComponent implements OnInit {
 
   public handleAddClick(): void {
     if (this.ensureValuesAreDefined()) {
-      const newCatch: Catch = {
-        fish: this.selectedFish,
-        lure: this.selectedLure,
-        lake: this.selectedLake,
+      const newCatch: any = {
+        fishId: this.selectedFish.id,
+        lureId: this.selectedLure.id,
+        lakeId: this.selectedLake.id,
         weight: this.selectedWeight,
       };
+      this.catchService.addCatch(newCatch).subscribe(() => {
+        console.log(newCatch);
+      });
       console.log(newCatch);
     } else {
       console.log('Please select all values');

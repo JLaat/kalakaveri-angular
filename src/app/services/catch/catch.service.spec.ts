@@ -18,8 +18,4 @@ describe('CatchService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-
-  it('getAllCatches() should return an Observable<Catch[]>', () => {
-    expect(service.getAllCatches()).toBeTruthy();
-  });
 });

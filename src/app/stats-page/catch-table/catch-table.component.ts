@@ -13,6 +13,8 @@ import { LureService } from 'src/app/services/lure/lure.service';
 })
 export class CatchTableComponent implements OnInit {
   public catchData: Catch[] = [];
+  public topTenCatches: Catch[] = [];
+
   displayedColumns: string[] = [
     'fish-name',
     'lake-name',
@@ -29,12 +31,19 @@ export class CatchTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCatches();
+    this.getTopCatches();
     console.log(this.catchData);
   }
 
   public getCatches(): void {
     this.catchService.getCatches().subscribe((catches) => {
       this.catchData = catches;
+    });
+  }
+
+  public getTopCatches(): void {
+    this.catchService.getTopCatches().subscribe((catches) => {
+      this.topTenCatches = catches;
     });
   }
 }
