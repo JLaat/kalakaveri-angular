@@ -66,7 +66,12 @@ export class CatchFormComponent implements OnInit {
 
   public handleAddClick(): void {
     if (this.ensureValuesAreDefined()) {
-      const newCatch: any = {
+      const newCatch: {
+        fishId: number;
+        lureId: number;
+        lakeId: number;
+        weight: number;
+      } = {
         fishId: this.selectedFish.id,
         lureId: this.selectedLure.id,
         lakeId: this.selectedLake.id,
