@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LureTableComponent } from '../app/stats-page/lure-table/lure-table.component';
+import { LureTableComponent } from '../app/stats/lure-table/lure-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -11,10 +11,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
-import { LakeTableComponent } from '../app/stats-page/lake-table/lake-table.component';
-import { CatchTableComponent } from './stats-page/catch-table/catch-table.component';
+import { LakeTableComponent } from '../app/stats/lake-table/lake-table.component';
+import { CatchTableComponent } from './stats/catch-table/catch-table.component';
 import { CatchFormComponent } from './forms/catch-form/catch-form.component';
 import { MatButtonModule } from '@angular/material/button';
+import { FishCountComponent } from './stats/fish-count/fish-count.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
     LakeTableComponent,
     CatchTableComponent,
     CatchFormComponent,
+    FishCountComponent,
   ],
   imports: [
     BrowserModule,

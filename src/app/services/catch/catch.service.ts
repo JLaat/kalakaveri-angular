@@ -87,6 +87,23 @@ export class CatchService {
       );
   }
 
+  public getFishCounts(): Observable<{ name: string; count: number }[]> {
+    return this.http.get<Fish[]>(`${this.apiUrl}/fish/all`).pipe(
+      mergeMap((fishes) => {
+        return forkJoin(
+          fishes.map((fishData) => {
+            return forkJoin({
+              name: of(fishData.name),
+              count: this.http.get<number>(
+                `${this.apiUrl}/catch/count/${fishData.id}`
+              ),
+            });
+          })
+        );
+      })
+    );
+  }
+
   public getCatchById(id: number): Observable<Catch> {
     return this.http.get<Catch>(`${this.apiUrl}/catch/find/${id}`);
   }
