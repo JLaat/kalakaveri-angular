@@ -16,6 +16,9 @@ import { CatchTableComponent } from './stats/catch-table/catch-table.component';
 import { CatchFormComponent } from './forms/catch-form/catch-form.component';
 import { MatButtonModule } from '@angular/material/button';
 import { FishCountComponent } from './stats/fish-count/fish-count.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { FactsContainerComponent } from './stats/facts-container/facts-container.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,8 @@ import { FishCountComponent } from './stats/fish-count/fish-count.component';
     CatchTableComponent,
     CatchFormComponent,
     FishCountComponent,
+    HeaderComponent,
+    FactsContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +43,7 @@ import { FishCountComponent } from './stats/fish-count/fish-count.component';
     FormsModule,
     MatSliderModule,
     MatButtonModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

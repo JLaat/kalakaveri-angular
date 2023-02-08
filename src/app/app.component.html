@@ -1,6 +1,17 @@
-<div class="container">
-    <app-catch-form></app-catch-form>
-    <app-catch-table></app-catch-table>
-    <app-fish-count></app-fish-count>
+<app-header></app-header>
 
-</div>
+    <mat-tab-group>
+        <mat-tab label="Catch"> 
+            <div class="catch-container">
+                <app-catch-form></app-catch-form>
+            <app-catch-table></app-catch-table>
+            </div>
+        </mat-tab>
+        <mat-tab label="Lake"> Lake </mat-tab>
+        <mat-tab label="Lure"> Lure </mat-tab>
+        <mat-tab label="Fish"> Fish </mat-tab>
+      </mat-tab-group>
+      
+
+
+

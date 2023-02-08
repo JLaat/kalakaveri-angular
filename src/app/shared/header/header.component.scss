@@ -1,0 +1,15 @@
+.container {
+    background-color: #303F9F;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+}
+h1 {
+    flex: 1;
+    color: #fff;
+    font-size: 3em;
+    font-weight: 300;
+    margin: 0;
+    padding: 1em;
+}

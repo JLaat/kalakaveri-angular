@@ -5,13 +5,6 @@ height: 100%;
 margin: none;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: .5em;
-    justify-content: center;
-}
 @media screen and (max-width: 600px) {
     .container {
         grid-template-columns: 1fr;
@@ -19,9 +12,6 @@ margin: none;
     }
 }
 
-app-catch-table {
-    grid-row: span 2;
-}
 app-catch-form {
     display:flex;
     justify-content: center;
@@ -30,22 +20,3 @@ app-catch-form {
     align-content: center;
 }
 
-.mat-table {
-    overflow-x: scroll;
-    
-}
-.mat-cell,
-.mat-header-cell {
-  word-wrap: initial;
-  display: table-cell;
-  line-break: unset;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  vertical-align: middle;
-}
-
-.mat-row,
-.mat-header-row {
-  display: table-row;
-}

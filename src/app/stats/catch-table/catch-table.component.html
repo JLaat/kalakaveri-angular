@@ -1,6 +1,5 @@
-
-<table mat-table [dataSource]="topTenCatches" class="mat-elevation-z8">
-  <h1>Top 10 Catches</h1>
+<table mat-table [dataSource]="catchData" class="mat-elevation-z8">
+  
   <ng-container matColumnDef="fish-name">
     <th mat-header-cell *matHeaderCellDef>Fish</th>
     <td mat-cell *matCellDef="let catch">{{catch.fish.name}}</td>
